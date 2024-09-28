@@ -1,11 +1,15 @@
-# TimerTrigger - C<span>#</span>
+# Data Generator
+Using Azure Functions, create a simple program which can generate test stock market data.
+The data generator should produce JSON messages containing the stock symbol, price and timestamp at regular intervals (e.g., every 5 seconds).
 
-The `TimerTrigger` makes it incredibly easy to have your functions executed on a schedule. This sample demonstrates a simple use case of calling your function every 5 minutes.
+## Note
+The generated prices need to be random with a big enough range to trigger the Logic App Buy and Sell commands. i.e. `375 ± 50`
 
-## How it works
-
-For a `TimerTrigger` to work, you provide a schedule in the form of a [cron expression](https://en.wikipedia.org/wiki/Cron#CRON_expression)(See the link for full details). A cron expression is a string with 6 separate expressions which represent a given schedule via patterns. The pattern we use to represent every 5 minutes is `0 */5 * * * *`. This, in plain text, means: "When seconds is equal to 0, minutes is divisible by 5, for any hour, day of the month, month, day of the week, or year".
-
-## Learn more
-
-<TODO> Documentation
+```JSON
+// Example JSON message
+{
+  "datetime": "2023-11-20T00:00:00.000Z"
+  "symbol": "MSFT",
+  "price": 377.44
+}
+```
