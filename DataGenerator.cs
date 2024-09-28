@@ -22,7 +22,7 @@ namespace StockMarketDataGenerator
         {
             var random = new Random();
 
-            var symbolList = new List<string> { "MSFT", "AMZN", "AAPL" };
+            var symbolList = new List<string> { "MSFT", "AMZN", "AAPL", "NVDA" };
             var index = random.Next(symbolList.Count); // Generate a random index
             var randomSymbol = symbolList[index]; // Pick the symbol at the random index
 
